@@ -1,2 +1,2 @@
 # Vertex-Study-AI
-An end-to-end AI-powered study assistant using RAG, LLMs, FastAPI, Flutter, and vector search for intelligent document understanding.
+Vertex Study AI is an end-to-end AI-powered learning platform that enables students to upload study materials, interact with their documents using natural language, generate concise summaries, create flashcards and quizzes, and receive context-aware answers through Retrieval-Augmented Generation (RAG). The platform combines modern Large Language Models (LLMs), vector databases, FastAPI, PostgreSQL, Docker, and Flutter to deliver a scalable and production-ready educational AI system.
