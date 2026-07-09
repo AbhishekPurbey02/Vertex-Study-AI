@@ -1,5 +1,7 @@
 from fastapi import APIRouter
 
+from app.core.config import settings
+
 router = APIRouter(
     prefix="/health",
     tags=["Health"],
@@ -10,6 +12,7 @@ router = APIRouter(
 def health_check():
     return {
         "status": "ok",
-        "app": "Vertex Study AI",
-        "version": "0.1.0",
+        "app": settings.app_name,
+        "version": settings.app_version,
+        "environment": settings.environment,
     }
