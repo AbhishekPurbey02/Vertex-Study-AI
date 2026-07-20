@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     environment: str = "development"
 
-    database_url: str = "postgresql+psycopg://vertex_user:vertex_password@localhost:5432/vertex_study_ai"
+    database_url: str = "postgresql+psycopg://postgres:password@localhost:5432/vertex_study_ai"
 
     backend_cors_origins: list[str] = [
         "http://localhost:3000",
