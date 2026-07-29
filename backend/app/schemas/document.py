@@ -6,3 +6,6 @@ class DocumentUploadResponse(BaseModel):
     status: str
     extracted_text_preview: str
     extracted_text_length: int
+    cleaned_text_preview:str
+    cleaned_text_length: int
+
