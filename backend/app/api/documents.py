@@ -3,6 +3,7 @@ from fastapi import APIRouter, File, HTTPException, UploadFile
 from app.services.text_service import clean_text
 from app.schemas.document import DocumentUploadResponse
 from app.services.pdf_service import extract_text_from_pdf
+from app.services.text_service import clean_text, chunk_text
 
 router = APIRouter(
     prefix="/documents",
@@ -28,6 +29,7 @@ async def upload_document(file:UploadFile = File(...)):
     
     extracted_text = extract_text_from_pdf(file_path)
     cleaned_text = clean_text(extracted_text)
+    chunks = chunk_text(cleaned_text)
 
     return DocumentUploadResponse(
         filename=file.filename,
@@ -37,4 +39,6 @@ async def upload_document(file:UploadFile = File(...)):
         extracted_text_length=len(extracted_text),
         cleaned_text_preview=cleaned_text[:500],
         cleaned_text_length=len(cleaned_text),
+        chunk_count=len(chunks),
+        chunk_preview=chunks[0] if chunks else "",
     )
