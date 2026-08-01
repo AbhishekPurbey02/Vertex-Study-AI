@@ -8,4 +8,6 @@ class DocumentUploadResponse(BaseModel):
     extracted_text_length: int
     cleaned_text_preview:str
     cleaned_text_length: int
+    chunk_count: int
+    chunk_preview: str
 
