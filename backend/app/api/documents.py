@@ -1,9 +1,12 @@
 from pathlib import Path
-from fastapi import APIRouter, File, HTTPException, UploadFile
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
+from sqlalchemy.orm import Session
 from app.services.text_service import clean_text
 from app.schemas.document import DocumentUploadResponse
 from app.services.pdf_service import extract_text_from_pdf
 from app.services.text_service import clean_text, chunk_text
+from app.db.session import get_db
+from app.models.document import Document
 
 router = APIRouter(
     prefix="/documents",
