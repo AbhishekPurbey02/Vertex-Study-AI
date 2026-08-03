@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
 class DocumentUploadResponse(BaseModel):
+    id: int
     filename: str
     content_type: str
     status: str
