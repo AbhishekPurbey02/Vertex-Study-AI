@@ -34,18 +34,18 @@ async def upload_document(
         content =  await file.read()
         buffer.write(content)
     
-    # extracted_text = extract_text_from_pdf(file_path)
-    # cleaned_text = clean_text(extracted_text)
-    # chunks = chunk_text(cleaned_text)
-    # document = Document(
-    #     filename=file.filename,
-    #     file_path=str(file_path),
-    #     content_type=file.content_type,
-    #     status="uploaded",
-    #     extracted_text_length=len(extracted_text),
-    #     cleaned_text_length=len(cleaned_text),
-    #     chunk_count=len(chunks),
-    # )
+    extracted_text = extract_text_from_pdf(file_path)
+    cleaned_text = clean_text(extracted_text)
+    chunks = chunk_text(cleaned_text)
+    document = Document(
+        filename=file.filename,
+        file_path=str(file_path),
+        content_type=file.content_type,
+        status="uploaded",
+        extracted_text_length=len(extracted_text),
+        cleaned_text_length=len(cleaned_text),
+        chunk_count=len(chunks),
+    )
 
     db.add(document)
     db.commit()
