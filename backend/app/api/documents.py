@@ -52,6 +52,7 @@ async def upload_document(
     db.refresh(document)
 
     return DocumentUploadResponse(
+
         filename=file.filename,
         content_type = file.content_type,
         status='uploaded',
