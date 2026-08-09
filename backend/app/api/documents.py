@@ -47,9 +47,9 @@ async def upload_document(
         chunk_count=len(chunks),
     )
 
-    # db.add(document)
-    # db.commit()
-    # db.refresh(document)
+    db.add(document)
+    db.commit()
+    db.refresh(document)
 
     return DocumentUploadResponse(
 
