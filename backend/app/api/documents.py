@@ -53,7 +53,7 @@ async def upload_document(
 
     return DocumentUploadResponse(
 
-        filename=file.filename,
+        # filename=file.filename,
         content_type = file.content_type,
         status='uploaded',
         extracted_text_preview=extracted_text[:500],
