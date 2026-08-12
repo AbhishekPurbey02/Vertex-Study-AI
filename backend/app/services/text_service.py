@@ -7,7 +7,7 @@ def clean_text(text: str) -> str:
 
     text = re.sub(r"\n{3,}", "\n\n", text)
 
-    # lines = [line.strip() for line in text.split("\n")]
+    lines = [line.strip() for line in text.split("\n")]
 
     cleaned_lines = [line for line in lines if line]
 
