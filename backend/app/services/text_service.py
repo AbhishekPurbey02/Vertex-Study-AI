@@ -11,7 +11,7 @@ def clean_text(text: str) -> str:
 
     cleaned_lines = [line for line in lines if line]
 
-    # return "\n".join(cleaned_lines)
+    return "\n".join(cleaned_lines)
 
 def chunk_text(text: str, chunk_size: int=1000, chunk_overlap: int =200) -> list[str]:
     if chunk_size <= 0:
