@@ -17,4 +17,4 @@ class Document(Base):
     extracted_text_length: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     cleaned_text_length: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
     chunk_count: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
+    # created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now())
