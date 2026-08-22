@@ -6,11 +6,11 @@ def extract_text_from_pdf(file_path) -> str:
 
     pages_text = []
 
-    for page in reader.pages:
-        text = page.extract_text()
+    # for page in reader.pages:
+    #     text = page.extract_text()
 
-        if text:
-            pages_text.append(text)
+    #     if text:
+    #         pages_text.append(text)
 
 
     return "\n\n".join(pages_text)
