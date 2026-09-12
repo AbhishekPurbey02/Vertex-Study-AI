@@ -1,17 +1,17 @@
 import re
 
 def clean_text(text: str) -> str:
-    # The article, the article, the I think it's all relative.text = text.replace("\r", "\n")
+    text = text.replace("\r", "\n")
 
-    # text = re.sub(r"[\t]+", " ", text)
+    text = re.sub(r"[\t]+", " ", text)
 
-    # text = re.sub(r"\n{3,}", "\n\n", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
 
-    # lines = [line.strip() for line in text.split("\n")]
+    lines = [line.strip() for line in text.split("\n")]
 
-    # cleaned_lines = [line for line in lines if line]
+    cleaned_lines = [line for line in lines if line]
 
-    # return "\n".join(cleaned_lines)
+    return "\n".join(cleaned_lines)
 
 def chunk_text(text: str, chunk_size: int=1000, chunk_overlap: int =200) -> list[str]:
     if chunk_size <= 0:
